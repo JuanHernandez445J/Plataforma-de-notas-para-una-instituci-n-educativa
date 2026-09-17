@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Estudiante</title>
+
+    <link rel="stylesheet" href="CSS/Crear Estudiante.css">
+    <link href ="JS/Crear Estudiante.js">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <div class="panel">
+
+            <div class="encabezado">
+                <h1>Crear Estudiante</h1>
+                <p>Registre la información del nuevo estudiante</p>
+            </div>
+
+            <form>
+
+                <div class="foto">
+                    <label for="estu_foto">Foto del estudiante</label>
+                    <input type="file" id="estu_foto" name="estu_foto" accept="image/*">
+                </div>
+
+                <div class="fila">
+
+                    <div class="campo">
+                        <label for="estu_id">ID del estudiante</label>
+                        <input type="number" id="estu_id" name="estu_id"
+                               placeholder="Ingrese el ID">
+                    </div>
+
+                    <div class="campo">
+                        <label for="estu_codigo">Código</label>
+                        <input type="text" id="estu_codigo" name="estu_codigo"
+                               placeholder="Ingrese el código">
+                    </div>
+
+                </div>
+
+                <div class="campo">
+                    <label for="estu_nombre">Nombre completo</label>
+                    <input type="text" id="estu_nombre" name="estu_nombre"
+                           placeholder="Ingrese el nombre completo">
+                </div>
+
+                <div class="campo">
+                    <label for="estu_identificacion">Identificación</label>
+                    <input type="text" id="estu_identificacion" name="estu_identificacion"
+                           placeholder="Número de identificación">
+                </div>
+
+                <div class="fila">
+
+                    <div class="campo">
+                        <label for="estu_jornada">Jornada</label>
+                        <select id="estu_jornada" name="estu_jornada">
+                            <option value="">Seleccione una jornada</option>
+                            <option value="mañana">Mañana</option>
+                            <option value="tarde">Tarde</option>
+                            <option value="noche">Noche</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="estu_grado">Grado</label>
+                        <select id="estu_grado" name="estu_grado">
+                            <option value="">Seleccione un grado</option>
+                            <option value="6">6°</option>
+                            <option value="7">7°</option>
+                            <option value="8">8°</option>
+                            <option value="9">9°</option>
+                            <option value="10">10°</option>
+                            <option value="11">11°</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="campo">
+                    <label for="estu_inasistencias">Inasistencias</label>
+                    <input type="number" id="estu_inasistencias"
+                           name="estu_inasistencias" min="0" value="0">
+                </div>
+
+                <div class="campo">
+                    <label for="estu_observaciones">Observaciones</label>
+                    <textarea id="estu_observaciones"
+                              name="estu_observaciones"
+                              placeholder="Escriba alguna observación sobre el estudiante"></textarea>
+                </div>
+
+                <div class="botones">
+                    <a href="Home_Admin.html" class="btn cancelar">Cancelar</a>
+                    <button type="submit" class="btn guardar">Crear estudiante</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
