@@ -6,7 +6,6 @@
     <title>Crear Estudiante</title>
 
     <link rel="stylesheet" href="CSS/Crear Estudiante.css">
-    <link href ="JS/Crear Estudiante.js">
 </head>
 
 <body>
@@ -37,7 +36,7 @@
 
                     <div class="campo">
                         <label for="estu_codigo">Código</label>
-                        <input type="text" id="estu_codigo" name="estu_codigo"
+                        <input type="number" id="estu_codigo" name="estu_codigo"
                                placeholder="Ingrese el código">
                     </div>
 
@@ -51,7 +50,7 @@
 
                 <div class="campo">
                     <label for="estu_identificacion">Identificación</label>
-                    <input type="text" id="estu_identificacion" name="estu_identificacion"
+                    <input type="number" id="estu_identificacion" name="estu_identificacion"
                            placeholder="Número de identificación">
                 </div>
 
@@ -92,12 +91,14 @@
                     <label for="estu_observaciones">Observaciones</label>
                     <textarea id="estu_observaciones"
                               name="estu_observaciones"
+                              type = "text"
+                              required
                               placeholder="Escriba alguna observación sobre el estudiante"></textarea>
                 </div>
 
                 <div class="botones">
                     <a href="Home_Admin.html" class="btn cancelar">Cancelar</a>
-                    <button type="submit" class="btn guardar">Crear estudiante</button>
+                    <button type="submit" id="btn_estudiante" class="btn guardar">Submit</button>
                 </div>
 
             </form>
@@ -107,5 +108,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="JS/Crear Estudiante.js"></script>
 </body>
 </html>

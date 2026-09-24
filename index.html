@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Institución Educativa</title>
+
+    <link rel="stylesheet" href="CSS/estilos bacanos.css">
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h1>Institución Educativa</h1>
+
+        <p>Plataforma Académica</p>
+
+    </header>
+
+
+    <main class="contenedor-login">
+
+        <section class="login">
+
+            <h2>Iniciar Sesión</h2>
+
+            <p class="texto-login">
+                Ingresa tu correo y contraseña
+            </p>
+
+
+            <form id="formularioLogin">
+
+
+                <div class="campo">
+
+                    <label for="correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        placeholder="ejemplo@correo.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="contrasena">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="contrasena"
+                        placeholder="Ingresa tu contraseña"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="boton-login">
+
+                    Iniciar sesión
+
+                </button>
+
+
+            </form>
+
+
+            <p id="mensaje"></p>
+
+
+            <div class="informacion-login">
+
+                <p>
+                    ¡Ingresa tus datos de forma correcta
+                    para identificar si eres estudiante o docente! 
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Institución Educativa
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const usuarios = [
+
+            {
+                correo: "estudiante1@correo.com",
+                contrasena: "1234",
+                tipo: "Estudiante"
+            },
+
+            {
+                correo: "estudiante2@correo.com",
+                contrasena: "5678",
+                tipo: "Estudiante"
+            },
+
+            {
+                correo: "profesor1@correo.com",
+                contrasena: "1234",
+                tipo: "Profesor"
+            },
+
+            {
+                correo: "profesor2@correo.com",
+                contrasena: "5678",
+                tipo: "Profesor"
+            }
+
+        ];
+
+
+        document
+        .getElementById("formularioLogin")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+
+            const correo =
+                document.getElementById("correo").value.trim();
+
+            const contrasena =
+                document.getElementById("contrasena").value.trim();
+
+            const mensaje =
+                document.getElementById("mensaje");
+
+
+            const usuarioEncontrado = usuarios.find(function(usuario) {
+
+                return usuario.correo === correo &&
+                       usuario.contrasena === contrasena;
+
+            });
+
+
+            if (usuarioEncontrado) {
+
+                mensaje.className = "mensaje-exito";
+
+                mensaje.innerHTML =
+                    "Inicio de sesión correcto.<br>" +
+                    "Ingresando como " +
+                    usuarioEncontrado.tipo + "...";
+
+
+                localStorage.setItem(
+                    "tipoUsuario",
+                    usuarioEncontrado.tipo
+                );
+
+
+                localStorage.setItem(
+                    "correoUsuario",
+                    usuarioEncontrado.correo
+                );
+
+
+                setTimeout(function() {
+
+                    window.location.href = "periodos.html";
+
+                }, 1000);
+
+
+            } else {
+
+                mensaje.className = "mensaje-error";
+
+                mensaje.innerHTML =
+                    "Correo o contraseña incorrectos.";
+
+            }
+
+        });
+
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
