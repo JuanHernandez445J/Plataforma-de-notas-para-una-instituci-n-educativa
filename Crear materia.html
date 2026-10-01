@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crear Materia</title>
+
+    <link rel="stylesheet" href="CSS/Crear materia.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="contenedor">
+
+        <div class="panel">
+
+
+            <div class="encabezado">
+
+                <h1>Crear Materia</h1>
+
+                <p>Registre una nueva materia</p>
+
+            </div>
+
+
+            <form>
+
+
+                <div class="campo">
+
+                    <label for="materia_codigo">
+                        Código de la materia
+                    </label>
+
+                    <input
+                        type="text"
+                        id="materia_codigo"
+                        name="materia_codigo"
+                        placeholder="Ej: MAT001"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="materia_nombre">
+                        Nombre de la materia
+                    </label>
+
+                    <input
+                        type="text"
+                        id="materia_nombre"
+                        name="materia_nombre"
+                        placeholder="Ej: Matemáticas"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="materia_area">
+                        Área
+                    </label>
+
+                    <select
+                        id="materia_area"
+                        name="materia_area"
+                    >
+
+                        <option value="">
+                            Seleccione un área
+                        </option>
+
+                        <option value="Matemáticas">
+                            Matemáticas
+                        </option>
+
+                        <option value="Humanidades">
+                            Humanidades
+                        </option>
+
+                        <option value="Ciencias Naturales">
+                            Ciencias Naturales
+                        </option>
+
+                        <option value="Ciencias Sociales">
+                            Ciencias Sociales
+                        </option>
+
+                        <option value="Idiomas">
+                            Idiomas
+                        </option>
+
+                        <option value="Educación Física">
+                            Educación Física
+                        </option>
+
+                        <option value="Tecnología">
+                            Tecnología e Informática
+                        </option>
+
+                        <option value="Artística">
+                            Educación Artística
+                        </option>
+
+                        <option value="Ética">
+                            Ética y Valores
+                        </option>
+
+                        <option value="Religión">
+                            Educación Religiosa
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="materia_horas">
+                        Intensidad horaria semanal
+                    </label>
+
+                    <input
+                        type="number"
+                        id="materia_horas"
+                        name="materia_horas"
+                        placeholder="Ej: 4"
+                        min="1"
+                        max="20"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="materia_descripcion">
+                        Descripción
+                    </label>
+
+                    <textarea
+                        id="materia_descripcion"
+                        name="materia_descripcion"
+                        placeholder="Describa la materia..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="botones">
+
+                    <a
+                        href="Home_Admin.html"
+                        class="btn cancelar"
+                    >
+                        Cancelar
+                    </a>
+
+
+                    <button
+                        type="submit"
+                        class="btn guardar"
+                    >
+                        Crear materia
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="JS/Crear materia.js"></script>
+
+
+</body>
+
+</html>

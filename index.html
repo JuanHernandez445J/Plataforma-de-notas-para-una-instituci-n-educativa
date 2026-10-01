@@ -58,13 +58,13 @@
 
                 <div class="campo">
 
-                    <label for="contrasena">
+                    <label for="contraseña">
                         Contraseña
                     </label>
 
                     <input
                         type="password"
-                        id="contrasena"
+                        id="contraseña"
                         placeholder="Ingresa tu contraseña"
                         required
                     >
@@ -91,7 +91,7 @@
 
                 <p>
                     ¡Ingresa tus datos de forma correcta
-                    para identificar si eres estudiante o docente! 
+                    para identificar si eres estudiante o docente!
                 </p>
 
             </div>
@@ -111,105 +111,10 @@
     </footer>
 
 
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        const usuarios = [
+    <script src="JS/index.js"></script>
 
-            {
-                correo: "estudiante1@correo.com",
-                contrasena: "1234",
-                tipo: "Estudiante"
-            },
-
-            {
-                correo: "estudiante2@correo.com",
-                contrasena: "5678",
-                tipo: "Estudiante"
-            },
-
-            {
-                correo: "profesor1@correo.com",
-                contrasena: "1234",
-                tipo: "Profesor"
-            },
-
-            {
-                correo: "profesor2@correo.com",
-                contrasena: "5678",
-                tipo: "Profesor"
-            }
-
-        ];
-
-
-        document
-        .getElementById("formularioLogin")
-        .addEventListener("submit", function(event) {
-
-            event.preventDefault();
-
-
-            const correo =
-                document.getElementById("correo").value.trim();
-
-            const contrasena =
-                document.getElementById("contrasena").value.trim();
-
-            const mensaje =
-                document.getElementById("mensaje");
-
-
-            const usuarioEncontrado = usuarios.find(function(usuario) {
-
-                return usuario.correo === correo &&
-                       usuario.contrasena === contrasena;
-
-            });
-
-
-            if (usuarioEncontrado) {
-
-                mensaje.className = "mensaje-exito";
-
-                mensaje.innerHTML =
-                    "Inicio de sesión correcto.<br>" +
-                    "Ingresando como " +
-                    usuarioEncontrado.tipo + "...";
-
-
-                localStorage.setItem(
-                    "tipoUsuario",
-                    usuarioEncontrado.tipo
-                );
-
-
-                localStorage.setItem(
-                    "correoUsuario",
-                    usuarioEncontrado.correo
-                );
-
-
-                setTimeout(function() {
-
-                    window.location.href = "periodos.html";
-
-                }, 1000);
-
-
-            } else {
-
-                mensaje.className = "mensaje-error";
-
-                mensaje.innerHTML =
-                    "Correo o contraseña incorrectos.";
-
-            }
-
-        });
-
-    </script>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

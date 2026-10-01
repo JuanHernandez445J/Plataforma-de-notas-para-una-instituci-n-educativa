@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Grupo</title>
+    <link rel="stylesheet" href="CSS/Crear Grupo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="panel">
+            <div class="encabezado">
+                <h1>Crear Grupo</h1>
+                <p>Registre un nuevo grupo académico</p>
+            </div>
+
+        <form>
+            <div class="campo">
+                <label for="grupo_codigo">Código del grupo</label>
+                <input type="text" id="grupo_codigo" name="grupo_codigo"
+                       placeholder="Ej: 10A001">
+            </div>
+
+            <div class="campo">
+                <label for="grupo_nombre">Nombre del grupo</label>
+                <input type="text" id="grupo_nombre" name="grupo_nombre"
+                       placeholder="Ej: 10°A">
+            </div>
+
+            <div class="campo">
+                <label for="grupo_grado">Grado</label>
+                <select id="grupo_grado" name="grupo_grado">
+                    <option value="">Seleccione un grado</option>
+                    <option value="6">Sexto</option>
+                    <option value="7">Séptimo</option>
+                    <option value="8">Octavo</option>
+                    <option value="9">Noveno</option>
+                    <option value="10">Décimo</option>
+                    <option value="11">Undécimo</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="grupo_jornada">Jornada</label>
+                <select id="grupo_jornada" name="grupo_jornada">
+                    <option value="">Seleccione una jornada</option>
+                    <option value="Mañana">Mañana</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Única">Única</option>
+                    <option value="Nocturna">Nocturna</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="grupo_cupo">Número máximo de estudiantes</label>
+                <input type="number" id="grupo_cupo" name="grupo_cupo"
+                       placeholder="Ej: 35" min="1" max="50">
+            </div>
+
+            <div class="campo">
+                <label for="grupo_anio">Año académico</label>
+                <input type="number" id="grupo_anio" name="grupo_anio"
+                       placeholder="Ej: 2026" min="2020" max="2100">
+            </div>
+
+            <div class="campo">
+                <label for="grupo_descripcion">Descripción</label>
+                <textarea id="grupo_descripcion" name="grupo_descripcion"
+                          placeholder="Describa el grupo..."></textarea>
+            </div>
+
+            <div class="botones">
+                <a href="Home_Admin.html" class="btn cancelar">Cancelar</a>
+                <button type="submit" class="btn guardar">Crear grupo</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="JS/Crear Grupo.js"></script>
+
+</body>
+</html>

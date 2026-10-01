@@ -7,7 +7,6 @@ formulario.addEventListener("submit", function(event) {
     let nota_evaluacion = document.getElementById("nota_evaluacion").value;
     let nota_valor = document.getElementById("nota_valor").value;
     let nota_porcentaje = document.getElementById("nota_porcentaje").value;
-    let nota_criterio = document.getElementById("nota_criterio").value;
 
     if (estu_codigo.trim() === "") {
         Swal.fire("Error", "Ingrese el código del estudiante.", "error");
@@ -26,11 +25,6 @@ formulario.addEventListener("submit", function(event) {
 
     if (nota_porcentaje.trim() === "" || isNaN(nota_porcentaje) || nota_porcentaje < 1 || nota_porcentaje > 100) {
         Swal.fire("Error", "El porcentaje debe estar entre 1 y 100.", "error");
-        return;
-    }
-
-    if (nota_criterio.trim() === "") {
-        Swal.fire("Error", "Ingrese el criterio a evaluar.", "error");
         return;
     }
 
