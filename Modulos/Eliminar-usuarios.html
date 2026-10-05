@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eliminar Usuario</title>
+
+    <link rel="stylesheet" href="../CSS/Eliminar Usuario.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Eliminar Usuario</h1>
+
+
+        <form id="formularioUsuario">
+
+            <div class="campo">
+
+                <label for="usua_id">
+                    ID del Usuario:
+                </label>
+
+                <input
+                    type="number"
+                    id="usua_id"
+                    name="usua_id"
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Buscar Usuario
+            </button>
+
+        </form>
+
+
+        <div id="informacion" class="informacion" style="display: none;">
+
+            <h2>Información del Usuario</h2>
+
+
+            <p>
+                <strong>ID:</strong>
+                <span id="mostrar_id"></span>
+            </p>
+
+
+            <p>
+                <strong>Usuario:</strong>
+                <span id="mostrar_usuario"></span>
+            </p>
+
+
+            <p>
+                <strong>Rol:</strong>
+                <span id="mostrar_rol"></span>
+            </p>
+
+
+            <p>
+                <strong>Estado:</strong>
+                <span id="mostrar_estado"></span>
+            </p>
+
+
+            <button type="button" id="btnEliminar">
+                Eliminar Usuario
+            </button>
+
+        </div>
+
+
+        <a href="Admin-Usuarios.html">
+            Cancelar
+        </a>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../JS/Eliminar Usuario.js"></script>
+
+</body>
+
+</html>

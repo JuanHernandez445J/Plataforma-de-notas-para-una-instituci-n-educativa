@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #b91c1c;
+    margin: 0;
+    padding: 40px;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.panel {
+    background-color: #ffffff;
+    border: 2px solid #16a34a;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.encabezado {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.encabezado h1 {
+    color: #b91c1c;
+    margin-bottom: 10px;
+}
+
+.encabezado p {
+    color: #b91c1c;
+    font-size: 16px;
+}
+
+.opciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.opcion {
+    background-color: #ffffff;
+    border: 2px solid #16a34a;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #b91c1c;
+    transition: 0.3s;
+}
+
+.opcion:hover {
+    background-color: #f0fdf4;
+    transform: translateY(-5px);
+}
+
+.icono {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.opcion h2 {
+    color: #b91c1c;
+    margin: 10px 0;
+}
+
+.opcion p {
+    color: #b91c1c;
+    margin: 0;
+}
+
+.botones {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.cancelar {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #b91c1c;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cancelar:hover {
+    background-color: #991b1b;
+}

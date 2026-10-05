@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modificar Estudiante</title>
+
+    <link rel="stylesheet" href="../CSS/Modificar Estudiante.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Modificar Estudiante</h1>
+
+        <form id="formularioEstudiante">
+
+            <div class="campo">
+                <label for="estu_id">ID del Estudiante:</label>
+                <input type="number" id="estu_id">
+            </div>
+
+            <button type="button" id="buscar">Buscar Estudiante</button>
+
+            <div id="datosEstudiante">
+
+                <div class="campo">
+                    <label for="estu_foto">Foto:</label>
+                    <input type="text" id="estu_foto">
+                </div>
+
+                <div class="campo">
+                    <label for="estu_nombre">Nombre:</label>
+                    <input type="text" id="estu_nombre">
+                </div>
+
+                <div class="campo">
+                    <label for="estu_apellido">Apellido:</label>
+                    <input type="text" id="estu_apellido">
+                </div>
+
+                <div class="campo">
+                    <label for="estu_identificacion">Identificación:</label>
+                    <input type="text" id="estu_identificacion">
+                </div>
+
+                <div class="campo">
+                    <label for="estu_gru_id">ID del Grupo:</label>
+                    <input type="number" id="estu_gru_id">
+                </div>
+
+                <div class="campo">
+                    <label for="estu_acud_id">ID del Acudiente:</label>
+                    <input type="number" id="estu_acud_id">
+                </div>
+
+                <div class="campo">
+                    <label for="estu_observaciones">Observaciones:</label>
+                    <textarea id="estu_observaciones"></textarea>
+                </div>
+
+                <button type="submit">Guardar Cambios</button>
+
+            </div>
+
+            <a href="Admin-Estudiante.html">Cancelar</a>
+
+        </form>
+
+    </div>
+
+    <script src="../JS/Modificar Estudiante.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

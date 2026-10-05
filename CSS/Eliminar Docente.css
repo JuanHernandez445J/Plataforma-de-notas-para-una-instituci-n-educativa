@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #b91c1c;
+    margin: 0;
+    padding: 40px;
+}
+
+.contenedor {
+    width: 500px;
+    margin: auto;
+    background-color: #ffffff;
+    border: 2px solid #16a34a;
+    border-radius: 12px;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #b91c1c;
+    margin-bottom: 25px;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #b91c1c;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #16a34a;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #15803d;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #16a34a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #15803d;
+}
+
+.datos {
+    margin-top: 25px;
+    padding: 20px;
+    border: 2px solid #16a34a;
+    border-radius: 10px;
+    background-color: #f0fdf4;
+}
+
+.datos h2 {
+    color: #b91c1c;
+    text-align: center;
+    margin-top: 0;
+}
+
+.datos p {
+    margin: 10px 0;
+    color: #b91c1c;
+}
+
+a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #b91c1c;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: #991b1b;
+}

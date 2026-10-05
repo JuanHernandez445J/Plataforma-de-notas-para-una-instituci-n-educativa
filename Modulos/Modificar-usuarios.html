@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modificar Usuario</title>
+
+    <link rel="stylesheet" href="../CSS/Modificar Usuario.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Modificar Usuario</h1>
+
+
+        <form id="formularioBuscar">
+
+            <div class="campo">
+
+                <label for="usua_id">
+                    ID del Usuario:
+                </label>
+
+                <input
+                    type="number"
+                    id="usua_id"
+                    name="usua_id"
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Buscar Usuario
+            </button>
+
+        </form>
+
+
+        <form id="formularioModificar" style="display: none;">
+
+
+            <div class="campo">
+
+                <label for="usua_usuario">
+                    Usuario:
+                </label>
+
+                <input
+                    type="text"
+                    id="usua_usuario"
+                    name="usua_usuario"
+                >
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="usua_clave">
+                    Contraseña:
+                </label>
+
+                <input
+                    type="password"
+                    id="usua_clave"
+                    name="usua_clave"
+                >
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="usua_rol">
+                    Rol:
+                </label>
+
+                <select
+                    id="usua_rol"
+                    name="usua_rol"
+                >
+
+                    <option value="">
+                        Seleccione un rol
+                    </option>
+
+                    <option value="estudiante">
+                        Estudiante
+                    </option>
+
+                    <option value="docente">
+                        Docente
+                    </option>
+
+                    <option value="admin">
+                        Administrador
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="usua_activo">
+                    Estado:
+                </label>
+
+                <select
+                    id="usua_activo"
+                    name="usua_activo"
+                >
+
+                    <option value="">
+                        Seleccione un estado
+                    </option>
+
+                    <option value="1">
+                        Activo
+                    </option>
+
+                    <option value="0">
+                        Inactivo
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button type="submit">
+                Guardar Cambios
+            </button>
+
+        </form>
+
+
+        <a href="Admin-Usuarios.html">
+            Cancelar
+        </a>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../JS/Modificar Usuario.js"></script>
+
+</body>
+
+</html>

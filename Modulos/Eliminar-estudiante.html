@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eliminar Estudiante</title>
+
+    <link rel="stylesheet" href="../CSS/Eliminar Estudiante.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Eliminar Estudiante</h1>
+
+        <form id="formularioEstudiante">
+
+            <div class="campo">
+
+                <label for="estu_id">ID del Estudiante:</label>
+
+                <input type="number" id="estu_id">
+
+            </div>
+
+            <button type="button" id="buscar">
+                Buscar Estudiante
+            </button>
+
+
+            <div id="datosEstudiante">
+
+                <h2>Datos del Estudiante</h2>
+
+                <p>
+                    <strong>Foto:</strong>
+                    <span id="estu_foto"></span>
+                </p>
+
+                <p>
+                    <strong>Nombre:</strong>
+                    <span id="estu_nombre"></span>
+                </p>
+
+                <p>
+                    <strong>Apellido:</strong>
+                    <span id="estu_apellido"></span>
+                </p>
+
+                <p>
+                    <strong>Identificación:</strong>
+                    <span id="estu_identificacion"></span>
+                </p>
+
+                <p>
+                    <strong>Grupo:</strong>
+                    <span id="estu_gru_id"></span>
+                </p>
+
+                <p>
+                    <strong>Acudiente:</strong>
+                    <span id="estu_acud_id"></span>
+                </p>
+
+                <p>
+                    <strong>Observaciones:</strong>
+                    <span id="estu_observaciones"></span>
+                </p>
+
+                <button type="submit" id="eliminar">
+                    Eliminar Estudiante
+                </button>
+
+            </div>
+
+            <a href="Admin-Estudiante.html">
+                Cancelar
+            </a>
+
+        </form>
+
+    </div>
+
+
+    <script src="../JS/Eliminar Estudiante.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

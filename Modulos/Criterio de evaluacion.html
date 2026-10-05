@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Criterio de Evaluación</title>
+
+    <link rel="stylesheet" href="../CSS/Criterio de evaluacion.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <div class="panel">
+
+            <div class="encabezado">
+                <h1>Criterio de Evaluación</h1>
+                <p>Registre el criterio de evaluación</p>
+            </div>
+
+            <form>
+
+                <div class="campo">
+                    <label for="criterio_nombre">Nombre de la evaluación</label>
+
+                    <input
+                        type="text"
+                        id="criterio_nombre"
+                        name="criterio_nombre"
+                        placeholder="Ej: Examen, Taller, Proyecto..."
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="criterio_porcentaje">Porcentaje</label>
+
+                    <input
+                        type="number"
+                        id="criterio_porcentaje"
+                        name="criterio_porcentaje"
+                        placeholder="Ej: 20"
+                        min="1"
+                        max="100"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="criterio_descripcion">Descripción del criterio</label>
+
+                    <textarea
+                        id="criterio_descripcion"
+                        name="criterio_descripcion"
+                        placeholder="Describa lo que se va a evaluar..."
+                    ></textarea>
+                </div>
+
+                <div class="botones">
+
+                    <a href="Home_docente.html" class="btn cancelar">
+                        Cancelar
+                    </a>
+
+                    <button type="submit" class="btn guardar">
+                        Crear criterio
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../JS/Criterio de Evaluacion.js"></script>
+
+</body>
+
+</html>

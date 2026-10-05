@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eliminar Grupo</title>
+
+    <link rel="stylesheet" href="../CSS/Eliminar Grupo.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Eliminar Grupo</h1>
+
+        <form id="formularioGrupo">
+
+            <div class="campo">
+
+                <label for="gru_id">
+                    ID del Grupo:
+                </label>
+
+                <input
+                    type="number"
+                    id="gru_id"
+                    name="gru_id"
+                >
+
+            </div>
+
+            <button type="submit">
+                Buscar Grupo
+            </button>
+
+        </form>
+
+
+        <div id="informacion" class="informacion" style="display: none;">
+
+            <h2>Información del Grupo</h2>
+
+            <p>
+                <strong>ID:</strong>
+                <span id="mostrar_id"></span>
+            </p>
+
+            <p>
+                <strong>Jornada:</strong>
+                <span id="mostrar_jornada"></span>
+            </p>
+
+            <p>
+                <strong>Nombre:</strong>
+                <span id="mostrar_nombre"></span>
+            </p>
+
+
+            <button type="button" id="btnEliminar">
+                Eliminar Grupo
+            </button>
+
+        </div>
+
+
+        <a href="Admin-Grupo.html">
+            Cancelar
+        </a>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../JS/Eliminar Grupo.js"></script>
+
+</body>
+
+</html>

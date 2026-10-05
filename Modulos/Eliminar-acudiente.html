@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eliminar Acudiente</title>
+
+    <link rel="stylesheet" href="../CSS/Eliminar Acudiente.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Eliminar Acudiente</h1>
+
+        <form id="formularioAcudiente">
+
+            <div class="campo">
+
+                <label for="acud_id">
+                    ID del Acudiente:
+                </label>
+
+                <input type="number" id="acud_id" name="acud_id">
+
+            </div>
+
+
+            <button type="button" id="buscar">
+                Buscar Acudiente
+            </button>
+
+
+            <div id="informacion" class="informacion">
+
+                <h2>Información del Acudiente</h2>
+
+                <p>
+                    <strong>Parentesco:</strong>
+                    <span id="parentesco"></span>
+                </p>
+
+                <p>
+                    <strong>Nombre:</strong>
+                    <span id="nombre"></span>
+                </p>
+
+                <p>
+                    <strong>Apellido:</strong>
+                    <span id="apellido"></span>
+                </p>
+
+                <p>
+                    <strong>Identificación:</strong>
+                    <span id="identificacion"></span>
+                </p>
+
+                <p>
+                    <strong>Dirección:</strong>
+                    <span id="direccion"></span>
+                </p>
+
+                <p>
+                    <strong>Teléfono:</strong>
+                    <span id="telefono"></span>
+                </p>
+
+                <p>
+                    <strong>Correo:</strong>
+                    <span id="email"></span>
+                </p>
+
+            </div>
+
+
+            <button type="submit" id="eliminar">
+                Eliminar Acudiente
+            </button>
+
+
+            <a href="Admin-Acudiente.html">
+                Cancelar
+            </a>
+
+        </form>
+
+    </div>
+
+
+    <script src="../JS/Eliminar Acudiente.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

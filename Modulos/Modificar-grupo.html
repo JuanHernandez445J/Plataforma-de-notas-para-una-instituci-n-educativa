@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modificar Grupo</title>
+
+    <link rel="stylesheet" href="../CSS/Modificar Grupo.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Modificar Grupo</h1>
+
+
+        <form id="formularioBuscar">
+
+            <div class="campo">
+
+                <label for="gru_id">
+                    ID del Grupo:
+                </label>
+
+                <input
+                    type="number"
+                    id="gru_id"
+                    name="gru_id"
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Buscar Grupo
+            </button>
+
+        </form>
+
+
+        <form id="formularioModificar" style="display: none;">
+
+            <div class="campo">
+
+                <label for="gru_jornada">
+                    Jornada:
+                </label>
+
+                <input
+                    type="text"
+                    id="gru_jornada"
+                    name="gru_jornada"
+                >
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="gru_nombre">
+                    Nombre del Grupo:
+                </label>
+
+                <input
+                    type="text"
+                    id="gru_nombre"
+                    name="gru_nombre"
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Guardar Cambios
+            </button>
+
+        </form>
+
+
+        <a href="Admin-Grupo.html">
+            Cancelar
+        </a>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../JS/Modificar Grupo.js"></script>
+
+</body>
+
+</html>

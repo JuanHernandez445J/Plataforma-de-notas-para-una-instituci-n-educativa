@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modificar Docente</title>
+
+    <link rel="stylesheet" href="../CSS/Modificar Docente.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Modificar Docente</h1>
+
+        <form id="formularioDocente">
+
+            <div class="campo">
+                <label for="doce_id">ID del Docente:</label>
+                <input type="number" id="doce_id">
+            </div>
+
+            <button type="button" id="buscar">
+                Buscar Docente
+            </button>
+
+
+            <div id="datosDocente">
+
+                <div class="campo">
+                    <label for="doce_foto">Foto:</label>
+                    <input type="text" id="doce_foto">
+                </div>
+
+                <div class="campo">
+                    <label for="doce_nombre">Nombre:</label>
+                    <input type="text" id="doce_nombre">
+                </div>
+
+                <div class="campo">
+                    <label for="doce_apellido">Apellido:</label>
+                    <input type="text" id="doce_apellido">
+                </div>
+
+                <div class="campo">
+                    <label for="doce_identificacion">Identificación:</label>
+                    <input type="text" id="doce_identificacion">
+                </div>
+
+                <div class="campo">
+                    <label for="doce_direccion">Dirección:</label>
+                    <input type="text" id="doce_direccion">
+                </div>
+
+                <div class="campo">
+                    <label for="doce_telefono">Teléfono:</label>
+                    <input type="text" id="doce_telefono">
+                </div>
+
+                <div class="campo">
+                    <label for="doce_email">Correo electrónico:</label>
+                    <input type="email" id="doce_email">
+                </div>
+
+                <div class="campo">
+                    <label for="doce_especialidad">Especialidad:</label>
+                    <input type="text" id="doce_especialidad">
+                </div>
+
+                <button type="submit">
+                    Guardar Cambios
+                </button>
+
+            </div>
+
+            <a href="Admin-Docente.html">
+                Cancelar
+            </a>
+
+        </form>
+
+    </div>
+
+
+    <script src="../JS/Modificar Docente.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

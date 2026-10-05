@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modificar Materia</title>
+
+    <link rel="stylesheet" href="../CSS/Modificar Materia.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Modificar Materia</h1>
+
+        <form id="formularioMateria">
+
+            <div class="campo">
+
+                <label for="asig_id">ID de la Materia:</label>
+
+                <input type="number" id="asig_id" name="asig_id">
+
+            </div>
+
+
+            <button type="button" id="buscarMateria">
+                Buscar Materia
+            </button>
+
+
+            <div id="camposMateria" style="display: none;">
+
+                <div class="campo">
+
+                    <label for="asig_gru_id">
+                        ID del Grupo:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="asig_gru_id"
+                        name="asig_gru_id"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="asig_nombre">
+                        Nombre de la Materia:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="asig_nombre"
+                        name="asig_nombre"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="asig_doce_id">
+                        ID del Docente:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="asig_doce_id"
+                        name="asig_doce_id"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="asig_logro">
+                        Logro:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="asig_logro"
+                        name="asig_logro"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="asig_intensidad">
+                        Intensidad:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="asig_intensidad"
+                        name="asig_intensidad"
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Guardar Cambios
+                </button>
+
+            </div>
+
+
+            <a href="Admin-Materia.html">
+                Cancelar
+            </a>
+
+        </form>
+
+    </div>
+
+
+    <script src="../JS/Modificar Materia.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

@@ -1,64 +1,92 @@
-let formulario = document.querySelector("form");
+let formulario = document.getElementById("formularioGrupo");
 
 formulario.addEventListener("submit", function(event) {
-event.preventDefault();
 
-let grupo_codigo = document.getElementById("grupo_codigo").value;
-let grupo_nombre = document.getElementById("grupo_nombre").value;
-let grupo_grado = document.getElementById("grupo_grado").value;
-let grupo_jornada = document.getElementById("grupo_jornada").value;
-let grupo_cupo = document.getElementById("grupo_cupo").value;
-let grupo_anio = document.getElementById("grupo_anio").value;
-let grupo_descripcion = document.getElementById("grupo_descripcion").value;
+    event.preventDefault();
 
-if (grupo_codigo.trim() === "") {
-    Swal.fire("Error", "Ingrese el código del grupo.", "error");
-    return;
-}
 
-if (
-    grupo_nombre.trim() === "" ||
-    !/^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9°\s]+$/.test(grupo_nombre.trim())
-) {
-    Swal.fire("Error", "Ingrese un nombre de grupo válido.", "error");
-    return;
-}
+    let gru_jornada = document.getElementById("gru_jornada").value;
+    let gru_nombre = document.getElementById("gru_nombre").value;
 
-if (grupo_grado.trim() === "") {
-    Swal.fire("Error", "Seleccione el grado del grupo.", "error");
-    return;
-}
 
-if (grupo_jornada.trim() === "") {
-    Swal.fire("Error", "Seleccione la jornada del grupo.", "error");
-    return;
-}
+    if (gru_jornada.trim() === "") {
 
-if (
-    grupo_cupo.trim() === "" ||
-    isNaN(grupo_cupo) ||
-    grupo_cupo < 1 ||
-    grupo_cupo > 50
-) {
-    Swal.fire("Error", "El número de estudiantes debe estar entre 1 y 50.", "error");
-    return;
-}
+        Swal.fire(
+            "Error",
+            "Ingrese la jornada del grupo.",
+            "error"
+        );
 
-if (
-    grupo_anio.trim() === "" ||
-    isNaN(grupo_anio) ||
-    grupo_anio < 2020 ||
-    grupo_anio > 2100
-) {
-    Swal.fire("Error", "Ingrese un año académico válido.", "error");
-    return;
-}
+        return;
+    }
 
-if (grupo_descripcion.trim() === "") {
-    Swal.fire("Error", "Ingrese una descripción para el grupo.", "error");
-    return;
-}
 
-Swal.fire("Correcto", "Grupo creado correctamente.", "success");
+    if (gru_nombre.trim() === "") {
+
+        Swal.fire(
+            "Error",
+            "Ingrese el nombre del grupo.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    let datos = new FormData();
+
+    datos.append("gru_jornada", gru_jornada);
+    datos.append("gru_nombre", gru_nombre);
+
+
+    fetch("../PHP/Crear-grupo.php", {
+
+        method: "POST",
+
+        body: datos
+
+    })
+
+    .then(function(respuesta) {
+
+        return respuesta.json();
+
+    })
+
+    .then(function(resultado) {
+
+        if (resultado.exito) {
+
+            Swal.fire(
+                "Correcto",
+                "Grupo creado correctamente.",
+                "success"
+            );
+
+            formulario.reset();
+
+        } else {
+
+            Swal.fire(
+                "Error",
+                resultado.mensaje,
+                "error"
+            );
+
+        }
+
+    })
+
+    .catch(function(error) {
+
+        console.log("Error:", error);
+
+        Swal.fire(
+            "Error",
+            "No se pudo conectar con el servidor.",
+            "error"
+        );
+
+    });
 
 });
