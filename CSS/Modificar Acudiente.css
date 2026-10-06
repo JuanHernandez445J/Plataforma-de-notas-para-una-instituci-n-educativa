@@ -13,6 +13,7 @@ body {
     border: 2px solid #16a34a;
     border-radius: 12px;
     padding: 30px;
+    box-sizing: border-box;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -58,6 +59,7 @@ button {
     font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
+    box-sizing: border-box;
 }
 
 button:hover {
@@ -65,7 +67,7 @@ button:hover {
 }
 
 a {
-    display: inline-block;
+    display: block;
     width: 100%;
     box-sizing: border-box;
     padding: 12px;
