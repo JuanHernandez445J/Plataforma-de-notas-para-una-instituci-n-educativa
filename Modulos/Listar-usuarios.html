@@ -18,7 +18,19 @@
 
         <h1>Usuarios Registrados</h1>
 
+        <a href="http://localhost/Plataforma-de-notas-para-una-instituci-n-educativa%20-%20copia/Modulos/Admin-Usuarios.html" class="volver">Volver</a>
 
+            <input type="text" id="buscarUsuario" class="busqueda"
+                placeholder="Buscar por usuario">
+
+                <button type="button" id="buscarBtn" class="boton-buscar">
+                Buscar
+                </button>
+            <button type="button" id="mostrarTodos" class="boton-buscar">
+                Mostrar todos
+            </button>
+                <strong>1 = activo</strong>
+                <strong>0 = inactivo</strong>
         <table>
 
             <thead>
@@ -27,11 +39,11 @@
 
                     <th>ID</th>
 
+                    <th>Activo</th>
+
                     <th>Usuario</th>
 
                     <th>Rol</th>
-
-                    <th>Estado</th>
 
                 </tr>
 
@@ -44,14 +56,9 @@
 
         </table>
 
-
-        <a href="http://localhost/Plataforma-de-notas-para-una-instituci-n-educativa%20-%20copia/Modulos/Admin-Usuarios.html">
-            Volver
-        </a>
-
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../JS/Listar-usuarios.js"></script>
 
 </body>

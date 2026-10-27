@@ -2,14 +2,10 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Listar Grupos</title>
-
     <link rel="stylesheet" href="../CSS/Listar-grupos.css">
-
 </head>
 
 <body>
@@ -18,34 +14,35 @@
 
         <h1>Grupos Registrados</h1>
 
+        <a href="http://localhost/Plataforma-de-notas-para-una-instituci-n-educativa%20-%20copia/Modulos/Admin-Grupo.html" class="volver">Volver</a>
+
+        <input type="text" id="buscarGrupo" class="busqueda"
+               placeholder="Buscar grupo por nombre">
+
+        <button type="button" id="buscarBtn" class="boton-buscar">
+            Buscar
+        </button>
+
+        <button type="button" id="mostrarTodos" class="boton-buscar">
+            Mostrar todos
+        </button>
+
         <table>
-
             <thead>
-
                 <tr>
                     <th>ID</th>
                     <th>Jornada</th>
                     <th>Nombre del Grupo</th>
                 </tr>
-
             </thead>
 
-            <tbody id="listaGrupos">
-
-            </tbody>
-
+            <tbody id="listaGrupos"></tbody>
         </table>
-
-
-        <a href="http://localhost/Plataforma-de-notas-para-una-instituci-n-educativa%20-%20copia/Modulos/Admin-Grupo.html">
-            Volver
-        </a>
 
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../JS/Listar-grupos.js"></script>
 
 </body>
-
 </html>

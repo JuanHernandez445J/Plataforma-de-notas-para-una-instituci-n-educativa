@@ -2,18 +2,27 @@
 
 include "conexion.php";
 
-header("Content-Type: application/json");
+header("Content-Type: application/json; charset=UTF-8");
 
-$doce_id = $_GET["id"];
+if (!isset($_GET["id"]) || trim($_GET["id"]) === "") {
+    echo json_encode([
+        "exito" => false
+    ]);
+    exit;
+}
 
-$sql = "SELECT * FROM docentes WHERE doce_id = '$doce_id'";
+$doce_id = trim($_GET["id"]);
 
-$resultado = $conexion->query($sql);
+$sql = "SELECT * FROM docentes WHERE doce_id = ?";
+$stmt = $conexion->prepare($sql);
+$stmt->bind_param("s", $doce_id);
+$stmt->execute();
+
+$resultado = $stmt->get_result();
 
 if ($resultado->num_rows > 0) {
 
     $docente = $resultado->fetch_assoc();
-
     $docente["exito"] = true;
 
     echo json_encode($docente);
@@ -26,6 +35,7 @@ if ($resultado->num_rows > 0) {
 
 }
 
+$stmt->close();
 $conexion->close();
 
 ?>

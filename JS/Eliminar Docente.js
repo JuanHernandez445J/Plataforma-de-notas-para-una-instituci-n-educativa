@@ -26,7 +26,6 @@ botonBuscar.addEventListener("click", function() {
                 document.getElementById("telefono").textContent = docente.doce_telefono;
                 document.getElementById("email").textContent = docente.doce_email;
                 document.getElementById("especialidad").textContent = docente.doce_especialidad;
-
                 document.getElementById("datosDocente").style.display = "block";
                 document.getElementById("eliminar").style.display = "block";
 

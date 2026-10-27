@@ -16,10 +16,12 @@
 
         <h1>Crear Estudiante</h1>
 
-        <form id="formularioEstudiante">
-
-            <input type="file" id="estu_foto" name="estu_foto" accept="image/*">
-
+        <form id="formularioEstudiante" enctype="multipart/form-data">
+                
+            <div class ="campo">
+                <label for="estu_foto">Foto:</label>
+            <input type="file" id ="estu_foto" name="estu_foto" accept="image/*">
+        
             <div class="campo">
                 <label for="estu_nombre">Nombre:</label>
                 <input type="text" id="estu_nombre" name="estu_nombre">

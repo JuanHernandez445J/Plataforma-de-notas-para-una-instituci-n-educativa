@@ -13,8 +13,24 @@
 </head>
 
 <body>
+    <div class = "contenedor">
 
     <h1>Lista de Materias</h1>
+
+    <a href="http://localhost/Plataforma-de-notas-para-una-instituci-n-educativa%20-%20copia/Modulos/Admin-Materia.html" class="volver">
+        Volver
+    </a>
+
+    <input type="text" id="buscarMateria" class="busqueda"
+           placeholder="Buscar materia por nombre">
+
+    <button type="button" id="buscarBtn" class="boton-buscar">
+        Buscar
+    </button>
+
+    <button type="button" id="mostrarTodos" class="boton-buscar">
+        Mostrar todos
+    </button>
 
     <table>
 
@@ -37,11 +53,9 @@
 
     </table>
 
-    <a href="http://localhost/Plataforma-de-notas-para-una-instituci-n-educativa%20-%20copia/Modulos/Admin-Materia.html" class="volver">
-        Volver
-    </a>
 
-
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../JS/Listar-materias.js"></script>
 
 </body>

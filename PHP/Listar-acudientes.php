@@ -9,6 +9,7 @@ $resultado = $conexion->query($sql);
 $acudientes = [];
 
 while ($fila = $resultado->fetch_assoc()) {
+
     $acudientes[] = $fila;
 }
 

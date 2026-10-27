@@ -1,44 +1,67 @@
+
 <?php
 
 include "conexion.php";
 
-header("Content-Type: application/json");
+header("Content-Type: application/json; charset=UTF-8");
 
+if (!isset($_POST["estu_id"]) || trim($_POST["estu_id"]) === "") {
+    echo json_encode([
+        "exito" => false,
+        "mensaje" => "Ingrese el ID del estudiante."
+    ]);
+    exit;
+}
 
-$estu_id = $_POST["estu_id"];
+$estu_id = trim($_POST["estu_id"]);
 
+$sql = "DELETE FROM estudiantes WHERE estu_id = ?";
+$stmt = $conexion->prepare($sql);
+$stmt->bind_param("s", $estu_id);
 
-$sql = "DELETE FROM estudiantes
-        WHERE estu_id = '$estu_id'";
+try {
 
+    if ($stmt->execute()) {
 
-if ($conexion->query($sql)) {
+        if ($stmt->affected_rows > 0) {
 
-    if ($conexion->affected_rows > 0) {
+            echo json_encode([
+                "exito" => true,
+                "mensaje" => "Estudiante eliminado correctamente."
+            ]);
+
+        } else {
+
+            echo json_encode([
+                "exito" => false,
+                "mensaje" => "No existe un estudiante con ese ID."
+            ]);
+
+        }
+
+    }
+
+} catch (mysqli_sql_exception $error) {
+
+    if ($error->getCode() == 1451) {
 
         echo json_encode([
-            "exito" => true
+            "exito" => false,
+            "mensaje" => "No se puede eliminar este estudiante porque tiene registros relacionados, como notas u otros datos académicos."
         ]);
 
     } else {
 
         echo json_encode([
             "exito" => false,
-            "mensaje" => "No existe un estudiante con ese ID."
+            "mensaje" => "Ocurrió un error al eliminar el estudiante."
         ]);
 
     }
 
-} else {
-
-    echo json_encode([
-        "exito" => false,
-        "mensaje" => $conexion->error
-    ]);
-
 }
 
-
+$stmt->close();
 $conexion->close();
 
 ?>
