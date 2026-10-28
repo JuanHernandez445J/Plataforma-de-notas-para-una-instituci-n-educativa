@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario1 </title>
+    <link rel="stylesheet" href="../CSS/ResumenXgrupo.css">
+</head>
+<body>
+
+    <h1>Resumir Boletin</h1>
+    
+    <!-- El contenedor del formulario -->
+	<!-- http://localhost/ResumenXgrupo.html -->
+	<!-- http://localhost/ResumenXgrupo.php -->
+	
+    <form id="formularioResumen" action="../PHP/ResumenXgrupo.php" method="POST">
+        <!-- Etiqueta para el campo de texto -->
+        <label for="Grupo">Ingresar Grupo :</label>
+        
+        <!-- Campo de edición (caja de texto) -->
+        <input type="text" id="Grupo" name="Grupo" placeholder="Escribe aquí...">
+        <br><br>
+
+        <label for="Jorna">Ingresar Jornada :</label>
+        <input type="text" id="Jorna" name="Jorna" placeholder="Mañana - Tarde - Noche...">
+        <br><br>
+
+
+		
+        <!-- Botón para enviar el formulario -->
+        <button type="submit">Aceptar</button>
+        <a href="Home_docente.html" class="boton-volver">Volver</a>
+    </form>
+        <script src="../SweetAlert2/dist/sweetalert2.all.min.js"></script>
+        <script src="../JS/ResumenXgrupo.js" defer></script>
+</body>
+</html>

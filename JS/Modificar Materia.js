@@ -41,8 +41,17 @@ botonBuscar.addEventListener("click", function() {
                 document.getElementById("asig_doce_id").value =
                     materia.asig_doce_id;
 
-                document.getElementById("asig_logro").value =
-                    materia.asig_logro;
+                document.getElementById("asig_logro1").value =
+                    materia.asig_logro1;
+
+                document.getElementById("asig_logro2").value =
+                    materia.asig_logro2;
+
+                document.getElementById("asig_logro3").value =
+                    materia.asig_logro3;
+
+                document.getElementById("asig_logro4").value =
+                    materia.asig_logro4;
 
                 document.getElementById("asig_intensidad").value =
                     materia.asig_intensidad;

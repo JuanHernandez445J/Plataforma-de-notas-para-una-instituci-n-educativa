@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario </title>
+    <link rel="stylesheet" href="../CSS/Resumir_Boletin.css">
+</head>
+<body>
+
+    <h1>Resumir Boletin</h1>
+    
+    <!-- El contenedor del formulario -->
+	<!-- http://localhost/Resumir_Boletin.html -->
+	<!-- http://localhost/Resumir_Boletin.php -->
+	
+    <form id="formularioResumen" action="../PHP/Resumir_Boletin.php" method="POST">
+        <!-- Etiqueta para el campo de texto -->
+        <label for="Ndoc">Documento de Identidad :</label>
+        
+        <!-- Campo de edición (caja de texto) -->
+        <input type="text" id="Ndoc" name="Ndoc" placeholder="Escribe aquí...">
+        <br><br>
+		
+        <!-- Botón para enviar el formulario -->
+        <button type="submit">Aceptar</button>
+        <a href="javascript:history.back()" class="boton-volver">Volver</a>
+    </form>
+        <script src="../SweetAlert2/dist/sweetalert2.all.min.js"></script>
+        <script src="../JS/Resumir_Boletin.js" defer></script>
+</body>
+</html>

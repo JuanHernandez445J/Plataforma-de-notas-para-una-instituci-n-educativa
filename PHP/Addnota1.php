@@ -219,6 +219,10 @@ a:hover {
 </style>
 </form>
 
+    <script src="../SweetAlert2/dist/sweetalert2.all.min.js"></script>
+    <script src="../JS/VerificarNotas.js"></script>
+</body>
+
 <script>
     // ==========================================
     // BASES DE DATOS EN MATRICES (ARRAYS DE OBJETOS)

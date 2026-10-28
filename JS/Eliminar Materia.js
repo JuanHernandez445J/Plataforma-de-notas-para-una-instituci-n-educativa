@@ -44,8 +44,17 @@ botonBuscar.addEventListener("click", function() {
                 document.getElementById("docente").textContent =
                     materia.asig_doce_id;
 
-                document.getElementById("logro").textContent =
-                    materia.asig_logro;
+                document.getElementById("logro1").textContent =
+                    materia.asig_logro1;
+
+                document.getElementById("logro2").textContent =
+                    materia.asig_logro2;
+
+                document.getElementById("logro3").textContent =
+                    materia.asig_logro3;
+
+                document.getElementById("logro4").textContent =
+                    materia.asig_logro4;
 
                 document.getElementById("intensidad").textContent =
                     materia.asig_intensidad;

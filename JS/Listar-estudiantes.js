@@ -17,6 +17,7 @@ function mostrarestudiantes(estudiantes) {
             <td>${estudiante.estu_identificacion}</td>
             <td>${estudiante.estu_gru_id}</td>
             <td>${estudiante.estu_acud_id}</td>
+            <td>${estudiante.estu_observaciones}</td>
         `;
         lista.appendChild(fila);
     });

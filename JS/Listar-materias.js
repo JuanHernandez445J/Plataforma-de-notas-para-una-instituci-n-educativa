@@ -11,7 +11,10 @@ function mostrarMaterias(materias) {
             <td>${materia.asig_gru_id}</td>
             <td>${materia.asig_nombre}</td>
             <td>${materia.asig_doce_id}</td>
-            <td>${materia.asig_logro}</td>
+            <td>${materia.asig_logro1}</td>
+            <td>${materia.asig_logro2}</td>
+            <td>${materia.asig_logro3}</td>
+            <td>${materia.asig_logro4}</td>
             <td>${materia.asig_intensidad}</td>
         `;
 

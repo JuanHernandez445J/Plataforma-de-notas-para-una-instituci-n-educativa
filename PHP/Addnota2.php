@@ -1,4 +1,3 @@
-
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -104,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingreso de Notas</title>
-
+    <script src="../SweetAlert2/dist/sweetalert2.all.min.js"></script>
     <style>
         
 * {
@@ -336,8 +335,8 @@ button[type="submit"]:active {
         <?php } ?>
 
         <?php if (count($listaAlumnosPHP) > 0) { ?>
-        <button type="submit"><strong>Subir</strong></button>
-        <a href="javascript:history.back()" class="btn-volver">Volver</a>
+        <button type="submit" href ="../modulos/Home_docente.html"><strong>Subir</strong></button>
+        <a href="../modulos/Home_docente.html" class="btn-volver">Volver</a>
         <?php } ?>
     </form>
 
@@ -517,20 +516,18 @@ if (cantidadRegistros > 0) {
 }
 
 formulario.addEventListener('submit', function(e) {
-
     e.preventDefault();
+
+    let datosFormulario = new FormData(formulario);
 
     respuestaDiv.style.color = '#333';
     respuestaDiv.textContent = 'Guardando notas...';
-
-    let datosFormulario = new FormData(formulario);
 
     fetch('Addnota3F.php', {
         method: 'POST',
         body: datosFormulario
     })
     .then(async function(respuesta) {
-
         let mensaje = await respuesta.text();
 
         if (!respuesta.ok) {
@@ -540,16 +537,26 @@ formulario.addEventListener('submit', function(e) {
         return mensaje;
     })
     .then(function(mensaje) {
-
-        respuestaDiv.style.color = 'green';
-        respuestaDiv.textContent = mensaje;
-
+        Swal.fire({
+            title: '¡Guardado correctamente!',
+            text: 'Por favor, no introduzca más notas.',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#16a34a',
+            allowOutsideClick: false,
+            allowEscapeKey: false
+        }).then(function() {
+            window.location.href = '../modulos/Home_docente.html';
+        });
     })
     .catch(function(error) {
-
-        respuestaDiv.style.color = 'red';
-        respuestaDiv.textContent = 'Error al guardar: ' + error.message;
-
+        Swal.fire({
+            title: 'Error',
+            text: 'No se pudieron guardar las notas. ' + error.message,
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#b91c1c'
+        });
     });
 });
 </script>

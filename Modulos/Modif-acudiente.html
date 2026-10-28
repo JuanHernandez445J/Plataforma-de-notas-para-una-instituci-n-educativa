@@ -19,116 +19,65 @@
 
         <h1>Modificar Acudiente</h1>
 
-        <form id="formularioAcudiente">
+        
+<form id="formularioAcudiente">
 
-            <div class="campo">
+    <div class="campo">
+        <label for="acud_id">ID del Acudiente:</label>
+        <input type="number" id="acud_id" name="acud_id">
+    </div>
 
-                <label for="acud_id">
-                    ID del Acudiente:
-                </label>
+    <button type="button" id="buscar">Buscar Acudiente</button>
 
-                <input type="number" id="acud_id" name="acud_id">
+    <div id="camposAcudiente" style="display: none;">
 
-            </div>
+        <div class="campo">
+            <label for="acud_parentesco">Parentesco:</label>
+            <input type="text" id="acud_parentesco" name="acud_parentesco">
+        </div>
 
-            <button type="button" id="buscar">
-                Buscar Acudiente
-            </button>
+        <div class="campo">
+            <label for="acud_nombre">Nombre:</label>
+            <input type="text" id="acud_nombre" name="acud_nombre">
+        </div>
 
+        <div class="campo">
+            <label for="acud_apellido">Apellido:</label>
+            <input type="text" id="acud_apellido" name="acud_apellido">
+        </div>
 
-            <div class="campo">
+        <div class="campo">
+            <label for="acud_identificacion">Identificación:</label>
+            <input type="text" id="acud_identificacion" name="acud_identificacion">
+        </div>
 
-                <label for="acud_parentesco">
-                    Parentesco:
-                </label>
+        <div class="campo">
+            <label for="acud_direccion">Dirección:</label>
+            <input type="text" id="acud_direccion" name="acud_direccion">
+        </div>
 
-                <input type="text" id="acud_parentesco" name="acud_parentesco">
+        <div class="campo">
+            <label for="acud_telefono">Teléfono:</label>
+            <input type="text" id="acud_telefono" name="acud_telefono">
+        </div>
 
-            </div>
-
-
-            <div class="campo">
-
-                <label for="acud_nombre">
-                    Nombre:
-                </label>
-
-                <input type="text" id="acud_nombre" name="acud_nombre">
-
-            </div>
-
-
-            <div class="campo">
-
-                <label for="acud_apellido">
-                    Apellido:
-                </label>
-
-                <input type="text" id="acud_apellido" name="acud_apellido">
-
-            </div>
+        <div class="campo">
+            <label for="acud_email">Correo electrónico:</label>
+            <input type="email" id="acud_email" name="acud_email">
+        </div>
 
 
-            <div class="campo">
+        <button type="submit" id="guardar">Guardar Cambios</button>
 
-                <label for="acud_identificacion">
-                    Identificación:
-                </label>
+    </div>
+    <a href="Admin-Acudiente.html">Cancelar</a>
 
-                <input type="text" id="acud_identificacion" name="acud_identificacion">
-
-            </div>
-
-
-            <div class="campo">
-
-                <label for="acud_direccion">
-                    Dirección:
-                </label>
-
-                <input type="text" id="acud_direccion" name="acud_direccion">
-
-            </div>
-
-
-            <div class="campo">
-
-                <label for="acud_telefono">
-                    Teléfono:
-                </label>
-
-                <input type="text" id="acud_telefono" name="acud_telefono">
-
-            </div>
-
-
-            <div class="campo">
-
-                <label for="acud_email">
-                    Correo electrónico:
-                </label>
-
-                <input type="email" id="acud_email" name="acud_email">
-
-            </div>
-
-
-            <a href="http://localhost/Plataforma-de-notas-para-una-instituci-n-educativa%20-%20copia/Modulos/Admin-Acudiente.html">
-                Cancelar
-            </a>
-
-            <button type="submit">
-                Guardar Cambios
-            </button>
-
-        </form>
+</form>
 
     </div>
 
-
+    <script src="../SweetAlert2/dist/sweetalert2.all.min.js"></script>
     <script src="../JS/Modificar Acudiente.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
