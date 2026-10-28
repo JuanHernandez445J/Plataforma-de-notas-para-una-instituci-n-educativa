@@ -1,0 +1,28 @@
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+h2 {
+    margin-bottom: 25px;
+}
+
+label {
+    display: inline-block;
+    min-width: 120px;
+}
+
+select,
+input,
+button {
+    padding: 8px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#respuesta {
+    margin-top: 20px;
+}

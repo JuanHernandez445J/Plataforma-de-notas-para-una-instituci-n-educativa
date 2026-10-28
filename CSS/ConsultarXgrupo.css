@@ -1,0 +1,107 @@
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #b91c1c;
+    margin: 0;
+    padding: 30px;
+}
+
+/* Contenedor principal */
+.contenedor {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 2px solid #16a34a;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.15);
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #b91c1c;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Campos de entrada */
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #16a34a;
+    border-radius: 7px;
+    font-size: 15px;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Cuando se selecciona un campo */
+input:focus {
+    outline: none;
+    border: 2px solid #16a34a;
+    box-shadow: 0 0 5px rgba(22, 163, 74, 0.25);
+}
+
+/* Botones */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+button,
+.boton-volver {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 7px;
+    background-color: #16a34a;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #15803d;
+}
+
+/* Botón volver */
+.boton-volver {
+    background-color: #b91c1c;
+}
+
+.boton-volver:hover {
+    background-color: #991b1b;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .contenedor {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

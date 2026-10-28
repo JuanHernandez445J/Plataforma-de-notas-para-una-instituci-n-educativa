@@ -1,0 +1,20 @@
+El comando Cell() en la librería FPDF para PHP sirve para imprimir una celda rectangular que puede contener texto, bordes, colores de fondo y enlaces.
+Sintaxis y Parámetros
+
+$pdf->Cell(w, h, txt, border, ln, align, fill, link);
+
+• w (Ancho  X): Ancho de la celda. Si pones 0, se extiende hasta el margen derecho.
+• h (Alto  Y): Alto de la celda. Si es 0, debes definir un alto de línea previamente.
+• txt (Texto): El texto que se va a mostrar dentro de la celda (por defecto vacío).
+• border (Borde): Indica si la celda tendrá bordes. 0 para sin borde, 1 para borde completo, o cadenas como 'L', 'T', 'R', 'B' (izquierda, arriba, derecha, abajo).
+• ln (Posición tras la llamada): Controla dónde se ubica el cursor después de imprimir la celda:
+	• 0: A la derecha (por defecto).
+	• 1: Al comienzo de la siguiente línea.
+	• 2: Debajo de la celda actual
+	
+• align (Alineación): Alineación del texto. Valores: 'L' (izquierda), 'C' (centrado), 'R' (derecha) o 'J' (justificado).
+• fill (Relleno): true para rellenar el fondo de la celda con color o false para dejarlo transparente.
+• link (Enlace): URL o identificador de enlace para la celda.
+
+// Crea una celda de ancho 40, alto 10, con texto y borde
+$pdf->Cell(40, 10, 'Hola, Mundo!', 1);
