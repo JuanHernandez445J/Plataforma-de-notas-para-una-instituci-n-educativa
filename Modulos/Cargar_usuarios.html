@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargue de Usuarios</title>
+    <link rel="stylesheet" href="../CSS/Cargar_usuarios.css">
+    <script src="../SweetAlert2/dist/sweetalert2.all.min.js"></script>
+</head>
+<body>
+
+<!-- Al hacer clic, redirige pasando el dato en la URL -->
+<!-- http://localhost/Cargar_usuarios.html -->
+<!-- http://localhost/Cargar_usuarios.php -->
+
+
+<button class="btn-volver" onclick="window.location.href='../Modulos/Admin-Usuarios.html';">Volver</button>
+<div class="contenedor">
+
+    <h1>Reiniciar Usuarios y Contraseñas</h1>
+
+    <p class="descripcion">
+        Utiliza esta opción para reconstruir los usuarios y sus contraseñas
+        registrados en la plataforma académica.
+    </p>
+
+    <button id="btnEnviar" data-valor="si" title="Reconstruir la tabla de usuarios">
+        Reiniciar usuarios
+    </button>
+
+    <div class="advertencia">
+        <strong>Advertencia:</strong> esta operación puede modificar los usuarios y las contraseñas existentes. Verifica su funcionamiento antes de continuar.
+    </div>
+
+</div>
+
+<script>
+// Clic desde el botón
+document.getElementById('btnEnviar').addEventListener('click', function() {
+
+    Swal.fire({
+        icon: "warning",
+        title: "¿Reiniciar usuarios?",
+        text: "Se reconstruirán los usuarios y las contraseñas. Esta operación puede modificar los datos existentes.",
+        showCancelButton: true,
+        confirmButtonText: "Sí, reiniciar",
+        cancelButtonText: "Cancelar",
+        confirmButtonColor: "#16a34a",
+        cancelButtonColor: "#b91c1c",
+        reverseButtons: true
+    }).then((resultado) => {
+
+        if (resultado.isConfirmed) {
+
+            let valorVariable = this.getAttribute('data-valor');
+            let datosFormulario = new URLSearchParams();
+            datosFormulario.append('mi_variable', valorVariable);
+
+            Swal.fire({
+                title: "Procesando...",
+                text: "Espera mientras se reconstruyen los usuarios.",
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            fetch('../PHP/Cargar_usuarios.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: datosFormulario
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Error en la respuesta del servidor.");
+                }
+
+                return response.text();
+            })
+            .then(data => {
+                Swal.fire({
+                    icon: "success",
+                    title: "Proceso finalizado",
+                    text: data,
+                    confirmButtonText: "Aceptar",
+                    confirmButtonColor: "#16a34a"
+                });
+            })
+            .catch(error => {
+                console.error("Error en la petición:", error);
+
+                Swal.fire({
+                    icon: "error",
+                    title: "Error de conexión",
+                    text: "No fue posible completar la petición al servidor.",
+                    confirmButtonColor: "#b91c1c"
+                });
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>

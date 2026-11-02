@@ -20,8 +20,7 @@ buscar.addEventListener("click", function() {
         .then(function(estudiante) {
 
             if (estudiante.exito) {
-
-                document.getElementById("estu_foto").value = estudiante.estu_foto;
+                document.getElementById("vistaFoto").src = "../Fotos/" + estudiante.estu_foto;
                 document.getElementById("estu_nombre").value = estudiante.estu_nombre;
                 document.getElementById("estu_apellido").value = estudiante.estu_apellido;
                 document.getElementById("estu_identificacion").value = estudiante.estu_identificacion;
@@ -42,11 +41,7 @@ buscar.addEventListener("click", function() {
 
             console.log("Error:", error);
 
-            Swal.fire(
-                "Error",
-                "No se pudo conectar con el servidor.",
-                "error"
-            );
+            Swal.fire("Error", "No se pudo conectar con el servidor.", "error");
 
         });
 
@@ -58,19 +53,13 @@ formulario.addEventListener("submit", function(event) {
     event.preventDefault();
 
     let estu_id = document.getElementById("estu_id").value;
-    let estu_foto = document.getElementById("estu_foto").value;
+    let estu_foto = document.getElementById("estu_foto").files[0];
     let estu_nombre = document.getElementById("estu_nombre").value;
     let estu_apellido = document.getElementById("estu_apellido").value;
     let estu_identificacion = document.getElementById("estu_identificacion").value;
     let estu_gru_id = document.getElementById("estu_gru_id").value;
     let estu_acud_id = document.getElementById("estu_acud_id").value;
     let estu_observaciones = document.getElementById("estu_observaciones").value;
-
-
-    if (estu_foto.trim() === "") {
-        Swal.fire("Error", "Ingrese la foto del estudiante.", "error");
-        return;
-    }
 
     if (estu_nombre.trim() === "" || estu_apellido.trim() === "") {
         Swal.fire("Error", "Ingrese el nombre y apellido.", "error");
@@ -102,11 +91,10 @@ formulario.addEventListener("submit", function(event) {
         return;
     }
 
-
     let datos = new FormData();
 
     datos.append("estu_id", estu_id);
-    datos.append("estu_foto", estu_foto);
+    if (estu_foto) {datos.append("estu_foto", estu_foto);}
     datos.append("estu_nombre", estu_nombre);
     datos.append("estu_apellido", estu_apellido);
     datos.append("estu_identificacion", estu_identificacion);
@@ -114,47 +102,31 @@ formulario.addEventListener("submit", function(event) {
     datos.append("estu_acud_id", estu_acud_id);
     datos.append("estu_observaciones", estu_observaciones);
 
-
     fetch("../PHP/Modificar-estudiante.php", {
         method: "POST",
         body: datos
     })
-
     .then(function(respuesta) {
         return respuesta.json();
     })
-
     .then(function(resultado) {
 
         if (resultado.exito) {
 
-            Swal.fire(
-                "Correcto",
-                "Estudiante modificado correctamente.",
-                "success"
-            );
+            Swal.fire("Correcto", "Estudiante modificado correctamente.", "success");
 
         } else {
 
-            Swal.fire(
-                "Error",
-                resultado.mensaje,
-                "error"
-            );
+            Swal.fire("Error", resultado.mensaje, "error");
 
         }
 
     })
-
     .catch(function(error) {
 
         console.log("Error:", error);
 
-        Swal.fire(
-            "Error",
-            "No se pudo conectar con el servidor.",
-            "error"
-        );
+        Swal.fire("Error", "No se pudo conectar con el servidor.", "error");
 
     });
 

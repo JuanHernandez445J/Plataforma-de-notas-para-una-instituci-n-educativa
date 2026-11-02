@@ -102,3 +102,13 @@ a {
 a:hover {
     background-color: #991b1b;
 }
+
+.foto-docente {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #16a34a;
+    display: block;
+    margin: 10px auto;
+}

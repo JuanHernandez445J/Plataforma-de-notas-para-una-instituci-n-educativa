@@ -29,7 +29,7 @@ buscar.addEventListener("click", function() {
 
             if (docente.exito) {
 
-                document.getElementById("doce_foto").value = docente.doce_foto;
+                document.getElementById("vistaFoto").src = "../Fotos/" + docente.doce_foto;
                 document.getElementById("doce_nombre").value = docente.doce_nombre;
                 document.getElementById("doce_apellido").value = docente.doce_apellido;
                 document.getElementById("doce_identificacion").value = docente.doce_identificacion;
@@ -70,7 +70,7 @@ formulario.addEventListener("submit", function(event) {
     event.preventDefault();
 
     let doce_id = document.getElementById("doce_id").value;
-    let doce_foto = document.getElementById("doce_foto").value;
+    let doce_foto = document.getElementById("doce_foto").files[0];
     let doce_nombre = document.getElementById("doce_nombre").value;
     let doce_apellido = document.getElementById("doce_apellido").value;
     let doce_identificacion = document.getElementById("doce_identificacion").value;
@@ -81,15 +81,6 @@ formulario.addEventListener("submit", function(event) {
 
 
     // VALIDACIONES
-
-    if (doce_foto.trim() === "") {
-        Swal.fire(
-            "Error",
-            "Ingrese la foto del docente.",
-            "error"
-        );
-        return;
-    }
 
     if (doce_nombre.trim() === "" || doce_apellido.trim() === "") {
         Swal.fire(
@@ -166,7 +157,7 @@ formulario.addEventListener("submit", function(event) {
     let datos = new FormData();
 
     datos.append("doce_id", doce_id);
-    datos.append("doce_foto", doce_foto);
+    if (doce_foto) {datos.append("doce_foto", doce_foto);}
     datos.append("doce_nombre", doce_nombre);
     datos.append("doce_apellido", doce_apellido);
     datos.append("doce_identificacion", doce_identificacion);

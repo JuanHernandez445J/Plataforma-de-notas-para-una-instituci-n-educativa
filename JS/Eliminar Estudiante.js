@@ -31,9 +31,9 @@ buscar.addEventListener("click", function() {
 
             if (estudiante.exito) {
 
-                document.getElementById("estu_foto").textContent =
-                    estudiante.estu_foto;
-
+                document.getElementById("foto").src = "../Fotos/" + estudiante.estu_foto;
+                
+                
                 document.getElementById("estu_nombre").textContent =
                     estudiante.estu_nombre;
 

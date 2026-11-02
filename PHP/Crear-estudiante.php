@@ -11,6 +11,34 @@ $estu_gru_id = $_POST["estu_gru_id"];
 $estu_acud_id = $_POST["estu_acud_id"];
 $estu_observaciones = $_POST["estu_observaciones"];
 
+$sqlGrupo = "SELECT gru_id FROM grupos WHERE gru_id = ?";
+$stmtGrupo = $conexion->prepare($sqlGrupo);
+$stmtGrupo->bind_param("i", $estu_gru_id);
+$stmtGrupo->execute();
+$resultadoGrupo = $stmtGrupo->get_result();
+
+if ($resultadoGrupo->num_rows == 0) {
+    echo json_encode([
+        "exito" => false,
+        "mensaje" => "El grupo ingresado no existe."
+    ]);
+    exit;
+}
+
+$sqlAcudiente = "SELECT acud_id FROM acudientes WHERE acud_id = ?";
+$stmtAcudiente = $conexion->prepare($sqlAcudiente);
+$stmtAcudiente->bind_param("i", $estu_acud_id);
+$stmtAcudiente->execute();
+$resultadoAcudiente = $stmtAcudiente->get_result();
+
+if ($resultadoAcudiente->num_rows == 0) {
+    echo json_encode([
+        "exito" => false,
+        "mensaje" => "El acudiente ingresado no existe."
+    ]);
+    exit;
+}
+
 $estu_foto = "";
 
 if (isset($_FILES["estu_foto"]) && $_FILES["estu_foto"]["error"] == 0) {
@@ -28,7 +56,13 @@ if (isset($_FILES["estu_foto"]) && $_FILES["estu_foto"]["error"] == 0) {
 
     $estu_foto = uniqid() . "." . $extension;
 
-    $rutaDestino = "../Fotos/" . $estu_foto;
+    $carpeta = "../Fotos/";
+
+    if (!is_dir($carpeta)) {
+        mkdir($carpeta, 0777, true);
+    }
+
+    $rutaDestino = $carpeta . $estu_foto;
 
     if (!move_uploaded_file($_FILES["estu_foto"]["tmp_name"], $rutaDestino)) {
         echo json_encode([
@@ -68,17 +102,20 @@ if ($stmt->execute()) {
 
     echo json_encode([
         "exito" => true,
-        "mensaje" => "Estudiante guardado correctamente"
+        "mensaje" => "Estudiante guardado correctamente."
     ]);
 
 } else {
 
     echo json_encode([
         "exito" => false,
-        "mensaje" => "No se pudo guardar el estudiante."
+        "mensaje" => "No se pudo guardar el estudiante. Verifique que la identificación no esté repetida."
     ]);
+
 }
 
+$stmtGrupo->close();
+$stmtAcudiente->close();
 $stmt->close();
 $conexion->close();
 

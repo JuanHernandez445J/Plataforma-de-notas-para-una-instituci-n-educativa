@@ -114,7 +114,7 @@ mysqli_close($con);
             </div>
         </section>
 
-        <a class="volver" href="../Modulos/Home_docente.html">Volver al panel docente</a>
+        <a class="volver" href="../Modulos/Home_Notas.html">Volver al panel de notas</a>
     </main>
 
     <script>

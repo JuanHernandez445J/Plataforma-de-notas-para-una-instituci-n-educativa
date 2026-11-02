@@ -217,7 +217,7 @@ button:active {
 
     <!-- Al dar clic aquí, el navegador envía todo automáticamente -->
     <button type="submit">Enviar Formulario</button>
-    <a href="http://localhost/Plataforma-de-notas-para-una-instituci-n-educativa%20-%20copia/Modulos/Home_docente.html" id="volver">Volver</a>
+    <a href="../Modulos/Necesidades docente.html" id="volver">Volver</a>
 </form>
 </body>
 </html>

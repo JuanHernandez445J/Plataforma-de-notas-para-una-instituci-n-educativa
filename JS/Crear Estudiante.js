@@ -1,11 +1,10 @@
-
 let formulario = document.getElementById("formularioEstudiante");
 
 formulario.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
-    let estu_foto = document.getElementById("estu_foto").value;
+    let estu_foto = document.getElementById("estu_foto").files[0];
     let estu_nombre = document.getElementById("estu_nombre").value;
     let estu_apellido = document.getElementById("estu_apellido").value;
     let estu_identificacion = document.getElementById("estu_identificacion").value;
@@ -13,8 +12,8 @@ formulario.addEventListener("submit", function(event) {
     let estu_acud_id = document.getElementById("estu_acud_id").value;
     let estu_observaciones = document.getElementById("estu_observaciones").value;
 
-    if (estu_foto.trim() === "") {
-        Swal.fire("Error", "Ingrese la foto del estudiante.", "error");
+    if (!estu_foto) {
+        Swal.fire("Error", "Seleccione la foto del estudiante.", "error");
         return;
     }
 
@@ -58,6 +57,7 @@ formulario.addEventListener("submit", function(event) {
         return respuesta.json();
     })
     .then(function(resultado) {
+
         Swal.fire(
             resultado.exito ? "Correcto" : "Error",
             resultado.mensaje,
@@ -67,10 +67,14 @@ formulario.addEventListener("submit", function(event) {
         if (resultado.exito) {
             formulario.reset();
         }
+
     })
     .catch(function(error) {
+
         console.log("Error:", error);
+
         Swal.fire("Error", "No se pudo guardar el estudiante.", "error");
+
     });
 
 });

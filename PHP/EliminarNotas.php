@@ -70,7 +70,7 @@ mysqli_close($con);
 
         <button type="submit">Consultar y eliminar notas</button>
 
-        <a href="../Modulos/Home_docente.html">Volver</a>
+        <a href="../Modulos/Home_Notas.html">Volver</a>
     </form>
 
     <script>

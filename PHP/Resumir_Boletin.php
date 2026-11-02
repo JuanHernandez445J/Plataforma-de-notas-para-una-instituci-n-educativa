@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (file_exists("LogoColegio.png")) $pdf->Image("LogoColegio.png", 14, 10, 12);
             if (file_exists("LogoAlcaldia.png")) $pdf->Image("LogoAlcaldia.png", 187, 10, 12);
             
-            $fotoRuta = 'Fotos/' . $datosEstudiante['estu_foto'];
+            $fotoRuta = '../Fotos/' . $datosEstudiante['estu_foto'];
             if (!empty($datosEstudiante['estu_foto']) && file_exists($fotoRuta)) {
                 $pdf->Image($fotoRuta, 14, 34, 15);
             }

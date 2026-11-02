@@ -18,7 +18,7 @@ botonBuscar.addEventListener("click", function() {
 
             if (docente.exito) {
 
-                document.getElementById("foto").textContent = docente.doce_foto;
+                document.getElementById("foto").src = "../Fotos/" + docente.doce_foto;
                 document.getElementById("nombre").textContent = docente.doce_nombre;
                 document.getElementById("apellido").textContent = docente.doce_apellido;
                 document.getElementById("identificacion").textContent = docente.doce_identificacion;

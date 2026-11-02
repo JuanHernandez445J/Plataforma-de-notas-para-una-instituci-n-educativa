@@ -86,7 +86,7 @@ require('conexion.php');
 
     <!-- Al dar clic aquí, el navegador envía todo automáticamente -->
      <button type="submit">Aceptar</button>
-     <a id = "volver" href = "http://localhost/Plataforma-de-notas-para-una-instituci-n-educativa%20-%20copia/Modulos/Home_docente.html">Volver</a>
+     <a id = "volver" href = "../Modulos/Home_Notas.html">Volver</a>
     <style>
 * {
     margin: 0;

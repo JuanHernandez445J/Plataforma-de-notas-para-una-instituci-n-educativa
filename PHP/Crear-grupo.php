@@ -2,26 +2,22 @@
 
 include "conexion.php";
 
-header("Content-Type: application/json");
-
+header("Content-Type: application/json; charset=UTF-8");
 
 $gru_jornada = $_POST["gru_jornada"];
 $gru_nombre = $_POST["gru_nombre"];
 
+$sql = "INSERT INTO grupos (gru_jornada, gru_nombre) VALUES (?, ?)";
 
-$sql = "INSERT INTO grupos
-        (
-            gru_jornada,
-            gru_nombre
-        )
-        VALUES
-        (
-            '$gru_jornada',
-            '$gru_nombre'
-        )";
+$stmt = $conexion->prepare($sql);
 
+$stmt->bind_param(
+    "ss",
+    $gru_jornada,
+    $gru_nombre
+);
 
-if ($conexion->query($sql)) {
+if ($stmt->execute()) {
 
     echo json_encode([
         "exito" => true,
@@ -32,12 +28,12 @@ if ($conexion->query($sql)) {
 
     echo json_encode([
         "exito" => false,
-        "mensaje" => $conexion->error
+        "mensaje" => "No se pudo guardar el grupo."
     ]);
 
 }
 
-
+$stmt->close();
 $conexion->close();
 
 ?>

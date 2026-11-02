@@ -546,7 +546,7 @@ formulario.addEventListener('submit', function(e) {
             allowOutsideClick: false,
             allowEscapeKey: false
         }).then(function() {
-            window.location.href = '../modulos/Home_docente.html';
+            window.location.href = '../modulos/Home_Notas.html';
         });
     })
     .catch(function(error) {
