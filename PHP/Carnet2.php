@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				// 1. Guardamos la posición Y actual antes de que las celdas sigan bajando
 					$y_actual = $pdf->GetY();
 	
-					if (file_exists('Fotos/' .$fila['estu_foto'])) $pdf->Image('Fotos/' .$fila['estu_foto'], 88, $y_actual-2, 12);
+					if (file_exists('../Fotos/' .$fila['estu_foto'])) $pdf->Image('../Fotos/' .$fila['estu_foto'], 88, $y_actual-2, 12);
 					$nombre = $fila['estu_apellido'] . " " . $fila['estu_nombre'];
 					$line = str_pad($nombre, 36);
 					$pdf->Cell(90, 4, $line, 0, 0, 'L');
